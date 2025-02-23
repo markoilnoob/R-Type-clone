@@ -129,6 +129,7 @@ GameObject:
   - component: {fileID: 2397526199250809981}
   - component: {fileID: 2621787058042606938}
   - component: {fileID: 3700451913668330978}
+  - component: {fileID: -7872286546805085199}
   - component: {fileID: 7630121090138380439}
   - component: {fileID: 8430068108617426863}
   m_Layer: 0
@@ -184,6 +185,18 @@ MonoBehaviour:
   muzzlePos: {fileID: 3202640304440426357}
   _bulletToSpawn: {fileID: 5477027028388348936, guid: 6b92824d542fd3041bfeb083be5d7a59, type: 3}
   fireRate: 4
+--- !u!114 &-7872286546805085199
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5010514211622538739}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 4daed08598aa2ed498af28ec2639074d, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!50 &7630121090138380439
 Rigidbody2D:
   serializedVersion: 5
