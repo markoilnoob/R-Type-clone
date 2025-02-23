@@ -14,18 +14,23 @@ public class SpawnerEnemy : MonoBehaviour
     [SerializeField] private float coolDown = 1.75f;
 
     public bool IsGameOver { get; private set; }
+    public bool IsWaveEnded { get; private set; }
 
-    private void Awake() => IsGameOver = false;
+    private void Awake()
+    {
+        IsGameOver = false;
+        IsWaveEnded = false;
+    }
 
     private void Start() => StartCoroutine(CreateEnemy());
 
     private IEnumerator CreateEnemy()
     {
-        while (!IsGameOver)
+        while (!IsGameOver && !IsWaveEnded)
         {
             yield return new WaitForSeconds(coolDown);
 
-            int enemyType = Random.Range(0, 2); // 0 = enemyX, 1 = enemyY
+            int enemyType = CreateRandom(0, 2); // 0 = enemyX, 1 = enemyY
             GameObject enemyToSpawn = (enemyType == 0) ? enemyX : enemyY;
 
             if (enemyType == 0 && spawnersX.Length > 0)
@@ -49,6 +54,8 @@ public class SpawnerEnemy : MonoBehaviour
     {
         int spawnIndex = CreateRandom(0, spawners.Length);
         GameObject spawnedEnemy = Instantiate(enemy, spawners[spawnIndex].transform.position, Quaternion.identity);
+        spawnedEnemy.transform.SetParent(null);
+        Debug.Log("Spawnato nemico: " + spawnedEnemy.name + " in posizione " + spawnedEnemy.transform.position);
 
         EnemyMovment enemyMovement = spawnedEnemy.GetComponent<EnemyMovment>();
         if (enemyMovement != null && IsVertical)
