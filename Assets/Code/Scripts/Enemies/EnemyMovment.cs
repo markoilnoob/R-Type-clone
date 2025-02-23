@@ -13,6 +13,11 @@ public class EnemyMovment : MonoBehaviour
 
     private void FixedUpdate()
     {
-        _rigidbody2d.linearVelocity = speed * direction;
+        _rigidbody2d.linearVelocity = speed * direction.normalized;
+    }
+
+    public void SetNewDirection(Vector2 newDirection)
+    {
+        direction = newDirection.normalized;
     }
 }
