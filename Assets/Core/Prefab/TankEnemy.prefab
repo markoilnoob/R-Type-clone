@@ -107,7 +107,7 @@ SpriteRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 0
-  m_Sprite: {fileID: 21300000, guid: aa25173df12a98e4592ce52ced2ab91c, type: 3}
+  m_Sprite: {fileID: 21300000, guid: 77b52dc3c29c62a408c98dbfde2c4716, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
   m_FlipY: 0
@@ -127,13 +127,12 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 2397526199250809981}
-  - component: {fileID: 2621787058042606938}
+  - component: {fileID: 6926803565968429496}
   - component: {fileID: 3700451913668330978}
-  - component: {fileID: -7872286546805085199}
   - component: {fileID: 7630121090138380439}
   - component: {fileID: 8430068108617426863}
   m_Layer: 0
-  m_Name: LinearEnemy
+  m_Name: TankEnemy
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -156,7 +155,7 @@ Transform:
   - {fileID: 3202640304440426357}
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!114 &2621787058042606938
+--- !u!114 &6926803565968429496
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -165,11 +164,15 @@ MonoBehaviour:
   m_GameObject: {fileID: 5010514211622538739}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 12d5b17b76e564448bda2afe75451183, type: 3}
+  m_Script: {fileID: 11500000, guid: 5091e5b6f712b9344875fbd55b4b2268, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  speed: 3
+  speed: 0
   direction: {x: 0, y: 1}
+  hp: 12
+  damage: 1
+  points: []
+  minDistance: 0.02
 --- !u!114 &3700451913668330978
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -184,19 +187,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   muzzlePos: {fileID: 3202640304440426357}
   _bulletToSpawn: {fileID: 5477027028388348936, guid: 6b92824d542fd3041bfeb083be5d7a59, type: 3}
-  fireRate: 4
---- !u!114 &-7872286546805085199
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 5010514211622538739}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 4daed08598aa2ed498af28ec2639074d, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
+  fireRate: 1
 --- !u!50 &7630121090138380439
 Rigidbody2D:
   serializedVersion: 5

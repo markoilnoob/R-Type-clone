@@ -20,4 +20,13 @@ public class EnemyMovment : MonoBehaviour
     {
         direction = newDirection.normalized;
     }
+
+    protected virtual void OnCollisionEnter2D(Collision2D collision)
+    {
+        if (collision.gameObject.CompareTag("PlayerBullet"))
+        {
+            Destroy(collision.gameObject);
+            Destroy(this.gameObject);
+        }
+    }
 }
